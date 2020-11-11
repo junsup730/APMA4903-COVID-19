@@ -1,4 +1,3 @@
-#coding:utf-8
 import numpy as np
 import pandas as pd
 from plotly import graph_objs as go
@@ -15,20 +14,17 @@ country = 'US'
 #country = 'Germany'
 
 # Confirmed cases
-#df = pd.read_csv('E:/data analysis/1021/lts199811484/COVID-19-master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv')
-df = pd.read_csv('time_series_covid_19_confirmed_global.csv')
+df = pd.read_csv('time_series_covid19_confirmed_global.csv')
 df.head()
 cols = df.columns[4:]
 infected = df.loc[df['Country/Region']==country, cols].values.flatten()
 
 # Deaths
-#df = pd.read_csv('E:/data analysis/1021/lts199811484/COVID-19-master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv')
-df = pd.read_csv('time_series_covid_19_deaths_global.csv')
+df = pd.read_csv('time_series_covid19_deaths_global.csv')
 deceased = df.loc[df['Country/Region']==country, cols].values.flatten()
 
 # Recovered
-#df = pd.read_csv('E:/data analysis/1021/lts199811484/COVID-19-master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv')
-df = pd.read_csv('time_series_covid_19_recovered_global.csv')
+df = pd.read_csv('time_series_covid19_recovered_global.csv')
 recovered = df.loc[df['Country/Region']==country, cols].values.flatten()
 
 ############## time ################
@@ -318,11 +314,10 @@ d={
 	'deceased':deceased,
 	'recovered':recovered
 	}
-together=pd.DataFrame(d)
+#together=pd.DataFrame(d)
 
 #together.to_csv('E:/data analysis/1021/lts199811484/together.csv', sep=',', header=True, index=True)
-together.to_csv('together.csv', sep=',', header=True, index=True)
 
-print("beta, gamma, sigma, alpha, N = opt.x")
-print(opt.x)
+#print("beta, gamma, sigma, alpha, N = opt.x")
+#print(opt.x)
 
